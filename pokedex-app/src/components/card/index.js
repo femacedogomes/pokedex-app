@@ -6,9 +6,8 @@ function Card(){
     const [pokemon, setPokemon] = useState({ name: '', avatar: '', id:'' })
 
     const getPokemon = function getPokemon() {
-        const url = `https://pokeapi.co/api/v2/pokemon/25`
-        fetch(url)
-        .then(response => response.json())
+        axios.get('https://pokeapi.co/api/v2/pokemon/25')
+        .then((res)=> setPokemon(res.data.results))
         .then(data => {
             setPokemon({
                 name: data.name,
