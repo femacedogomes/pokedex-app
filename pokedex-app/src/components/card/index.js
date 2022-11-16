@@ -1,19 +1,14 @@
 import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import '../../styles/card.css'
 
 function Card(){
 
-    const [pokemon, setPokemon] = useState({ name: '', avatar: '', id:'' })
-
+    
     const getPokemon = function getPokemon() {
-        axios.get('https://pokeapi.co/api/v2/pokemon/25')
-        .then((res)=> setPokemon(res.data.results))
-        .then(data => {
-            setPokemon({
-                name: data.name,
-                avatar: data.sprites.front_default,
-                id: data.id
-            })
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=50&offset=0')
+        .then(response=> {
+            console.log(response.data)
         })
     }
     useEffect(
@@ -21,9 +16,9 @@ function Card(){
     )
     return(
         <div className='Card'>
-            <p>{pokemon.name}</p>
-            <p>{pokemon.id}</p>
-            <img src={pokemon.avatar}></img>
+            <p>Pokemon name</p>
+            <p>Pokemin id</p>
+            <img alt='pokemon avatar'></img>
         </div>
     )
 }
