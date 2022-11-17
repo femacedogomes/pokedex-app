@@ -1,26 +1,13 @@
-import React,{useState,useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
 import '../../styles/card.css'
 
-function Card(){
+function PokemonCard(name) {
 
-    
-    const getPokemon = function getPokemon() {
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=50&offset=0')
-        .then(response=> {
-            console.log(response.data)
-        })
-    }
-    useEffect(
-        getPokemon
-    )
-    return(
+    return (
         <div className='Card'>
-            <p>Pokemon name</p>
-            <p>Pokemin id</p>
-            <img alt='pokemon avatar'></img>
+            {name}
         </div>
     )
 }
 
-export default Card
+export default PokemonCard

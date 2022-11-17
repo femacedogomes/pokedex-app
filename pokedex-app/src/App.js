@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './components/card'
+import Home from './pages/home';
 import './styles/home.css'
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
       <h1>Pokedex</h1>
       <p>by Felipe Macêdo Gomes</p>
       </section>
-      
-      <Card/>
+      <Home/>
     </div>
   );
 }
