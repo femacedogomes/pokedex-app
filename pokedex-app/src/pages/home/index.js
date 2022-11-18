@@ -5,7 +5,7 @@ import PokemonCard from '../../components/card';
 
 function Home() {
 
-    const [pokemons, setPokemons] = useState([])
+    const [pokemons, setPokemons] = useState([''])
 
     const getPokemons = function getPokemons() {
         axios
@@ -21,9 +21,6 @@ function Home() {
     return (
         <div className='Container'> 
                 <div className='Container'>
-                    {pokemons.map((pokemon)=>{
-                
-                    })}
                 </div>
         </div>
     )
