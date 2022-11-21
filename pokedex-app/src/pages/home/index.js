@@ -1,27 +1,13 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
+import React, {useState, useEffect} from 'react'    
 import PokemonCard from '../../components/card';
-
+import SearchBar from '../../components/Search';
+import Header from '../../components/header';
 
 function Home() {
-
-    const [pokemons, setPokemons] = useState([''])
-
-    const getPokemons = function getPokemons() {
-        axios
-            .get('https://pokeapi.co/api/v2/pokemon?limit=50')
-            //.then((res) => setPokemons(res.data.results))
-            .then((res) => console.log(res.data.results))
-            .catch(err => console.log(err))
-    }
-    useEffect(
-        getPokemons
-    );
-
     return (
-        <div className='Container'> 
-                <div className='Container'>
-                </div>
+        <div className='Container'>
+                <Header/>
+                <SearchBar/>
         </div>
     )
 }
