@@ -4,11 +4,11 @@ import '../../styles/Search.css'
 
 const SearchBar = () => {
     const [search, setSearch] = useState('')
-    const [pokemon, setPokemin] = useState()
+    const [pokemon, setPokemon] = useState()
 
     const onSearchHandler = async (pokemon) => {
-        const result = searchPokemon(pokemon)
-        console.log('pokemon', result)
+        const result = await searchPokemon(pokemon)
+        setPokemon(result)
     }
     const onClickButton = () => {
         onSearchHandler(search)
@@ -33,7 +33,7 @@ const SearchBar = () => {
                 <div>
                     <div>Nome:{pokemon.name}</div>
                     <div>{pokemon.weight}</div>
-                    <img src={pokemon.sprites.font_default}></img>
+                    <img src={pokemon.sprites.front_default}alt='Imagem Porkemon'></img>
                 </div>
             ): null}
         </div>

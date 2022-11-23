@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../styles/card.css'
 
-function PokemonCard(name) {
+const PokemonCard = (props) => {
+     const {pokemon} = props
     return (
         <div className='Card'>
-            {name}
+        <div>{pokemon.name}</div>
         </div>
     )
 }
