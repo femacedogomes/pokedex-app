@@ -3,7 +3,7 @@ import PokemonCard from '../../components/card';
 import SearchBar from '../../components/Search';
 import Header from '../../components/header';
 import Pokedex from '../../components/pokedex';
-import {getPokemons} from '../../components/api'
+import {getPokemonData, getPokemons} from '../../components/api'
 
 function Home() {
     const [loading, setLoading] = useState(false);
@@ -12,8 +12,13 @@ function Home() {
     const fetchPokemons = async () => {
         try {
             setLoading(true);
-            const result = await getPokemons();
-            setPokemons(result)
+            const data = await getPokemons();
+            const promises = data.results.map(async (pokemon)=>{
+                return await getPokemonData(pokemon.url)
+            })
+            const results = await Promise.all(promises)
+            console.log(results)
+            setPokemons(results)
             setLoading(false)
         } catch (error) {
             console.log('fetchPokemons error:', error)
@@ -28,7 +33,7 @@ function Home() {
         <div className='Container'>
                 <Header/>
                 <SearchBar/>
-                <Pokedex pokemons={pokemons.results} loading={loading}/>
+                <Pokedex pokemons={pokemons} loading={loading}/>
         </div>
     )
 }

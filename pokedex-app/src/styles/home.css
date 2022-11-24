@@ -1,0 +1,13 @@
+#Pokemons{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Pagination{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    padding-bottom: 20px;
+    margin-right: 50px;
+}
