@@ -3,7 +3,7 @@ import PokemonCard from '../../components/card';
 import SearchBar from '../../components/Search';
 import Header from '../../components/header';
 import Pokedex from '../../components/pokedex';
-import {getPokemonData, getPokemons} from '../../components/api'
+import {getPokemonData, getPokemons, searchPokemon} from '../../components/api'
 
 function Home() {
     const [loading, setLoading] = useState(false);
@@ -33,10 +33,19 @@ function Home() {
         fetchPokemons();
     },[page])
 
+    const onSearchHandler = async (pokemon) => {
+        if(!pokemon){
+           return fetchPokemons()
+        }
+        const results = await searchPokemon(pokemon)
+        setPokemons(results)
+    }
     return (
         <div className='Container'>
                 <Header/>
-                <SearchBar/>
+                <SearchBar
+                onSearchHandler={onSearchHandler}
+                />
                 <Pokedex 
                 pokemons={pokemons} 
                 loading={loading} 

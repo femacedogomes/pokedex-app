@@ -2,14 +2,10 @@ import React, {useState} from 'react';
 import {searchPokemon} from '../../components/api';
 import '../../styles/Search.css'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     const [search, setSearch] = useState('')
-    const [pokemon, setPokemon] = useState()
+    const {onSearchHandler} = props
 
-    const onSearchHandler = async (pokemon) => {
-        const result = await searchPokemon(pokemon)
-        setPokemon(result)
-    }
     const onClickButton = () => {
         onSearchHandler(search)
     }
@@ -29,13 +25,7 @@ const SearchBar = () => {
                     Buscar
                 </button>
             </div>
-            {pokemon ? (
-                <div>
-                    <div>Nome:{pokemon.name}</div>
-                    <div>{pokemon.weight}</div>
-                    <img src={pokemon.sprites.front_default}alt='Imagem Porkemon'></img>
-                </div>
-            ): null}
+
         </div>
     )   
 }
