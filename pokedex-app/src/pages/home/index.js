@@ -7,6 +7,7 @@ import {getPokemonData, getPokemons, searchPokemon} from '../../components/api'
 
 function Home() {
     const [loading, setLoading] = useState(false);
+    const [notFound, setNotFound] = useState(false)
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [pokemons, setPokemons] = useState([]);
@@ -37,8 +38,16 @@ function Home() {
         if(!pokemon){
            return fetchPokemons()
         }
-        const results = await searchPokemon(pokemon)
-        setPokemons(results)
+        setLoading(true)
+        setNotFound(false)
+        const result = await searchPokemon(pokemon)
+        if(!result){
+            setLoading(false)
+            setNotFound(true)
+        }else{
+            setPokemons(result)
+        }
+        setLoading(false)
     }
     return (
         <div className='Container'>
