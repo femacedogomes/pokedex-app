@@ -11,17 +11,17 @@ function Home() {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [pokemons, setPokemons] = useState([]);
+    
     const itensPerPage = 25
-
     const fetchPokemons = async () => {
         try {
             setLoading(true);
             const data = await getPokemons(itensPerPage, itensPerPage*page);
             const promises = data.results.map(async (pokemon)=>{
                 return await getPokemonData(pokemon.url)
-            })
+            });
+
             const results = await Promise.all(promises)
-            console.log(results)
             setPokemons(results)
             setLoading(false)
             setTotalPages(Math.ceil(data.count / itensPerPage))
@@ -53,7 +53,7 @@ function Home() {
         <div className='Container'>
                 <Header/>
                 <SearchBar
-                onSearchHandler={onSearchHandler}
+                onSearch={onSearchHandler}
                 />
                 <Pokedex 
                 pokemons={pokemons} 

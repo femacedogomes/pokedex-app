@@ -4,10 +4,15 @@ import '../../styles/Search.css'
 
 const SearchBar = (props) => {
     const [search, setSearch] = useState('')
-    const {onSearchHandler} = props
-
+    const {onSearch} = props
+    const onChangeHandler = (e) => {
+        setSearch(e.target.value)
+        if(e.target.value === 0) {
+            onSearch(undefined)
+        }
+    }
     const onClickButton = () => {
-        onSearchHandler(search)
+        onSearch(search)
     }
 
     return(
@@ -15,8 +20,7 @@ const SearchBar = (props) => {
             <div>
                 <input
                 placeholder='Digite o nome do pokemon'
-                onChange={(e)=>
-                {setSearch(e.target.value)}}></input>
+                onChange={onChangeHandler}></input>
             </div>
             <div>
                 <button
