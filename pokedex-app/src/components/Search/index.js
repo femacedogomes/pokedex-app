@@ -3,7 +3,7 @@ import {searchPokemon} from '../../components/api';
 import '../../styles/Search.css'
 
 const SearchBar = (props) => {
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('dito')
     const {onSearch} = props
     const onChangeHandler = (e) => {
         setSearch(e.target.value)

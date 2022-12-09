@@ -28,14 +28,17 @@ const Pokedex = (props) => {
             onRightClick={onRightClickHandler}
             />
             </div>
-            {loading ? <div>Carregando...</div> : <div id='Pokemons'>
-                {pokemons && pokemons.map((pokemon, index)=>{
-                    return(
+            {loading ? (
+            <div>Carregando...</div>
+            ) : (
+            <div id='Pokemons'>
+                {pokemons && pokemons.map((pokemon, index)=> {
+                    return (
                         <PokemonCard key={index} pokemon={pokemon}/>
-                    )
+                    );
                 })}
                 </div>
-            }
+            )}
         </div>  
     )
 }

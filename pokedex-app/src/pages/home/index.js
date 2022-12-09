@@ -45,7 +45,7 @@ function Home() {
             setLoading(false)
             setNotFound(true)
         }else{
-            setPokemons(result)
+            setPokemons([result])
         }
         setLoading(false)
     }
