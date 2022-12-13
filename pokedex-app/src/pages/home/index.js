@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'    
-import PokemonCard from '../../components/card';
 import SearchBar from '../../components/Search';
 import Header from '../../components/header';
 import Pokedex from '../../components/pokedex';
@@ -12,7 +11,7 @@ function Home() {
     const [totalPages, setTotalPages] = useState(0);
     const [pokemons, setPokemons] = useState([]);
     
-    const itensPerPage = 25
+    const itensPerPage = 30
     const fetchPokemons = async () => {
         try {
             setLoading(true);
@@ -41,6 +40,7 @@ function Home() {
         setLoading(true)
         setNotFound(false)
         const result = await searchPokemon(pokemon)
+        console.log(result.sprites.other.dream_world.front_default)
         if(!result){
             setLoading(false)
             setNotFound(true)
