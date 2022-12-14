@@ -1,7 +1,8 @@
 
 .Card{
+    background-color: lightgray;
     margin: auto;
-    height: 300px;
+    height: 240px;
     width: 300px;
     text-align: center;
     box-shadow: 5px  5px 5px 5px rgba(0, 0, 0, 0.192);
@@ -18,14 +19,18 @@
     gap: 40px;
 }
 .pokemon-image{
+    margin-top: 10px;
     border-radius: 15px;
-    background-color: lightgray;
+    background-color: white;
     padding: 20px;
     padding-top: 20px;
     height: 140px;
+    width: 200px;
     max-width: 250px;
 }
 .pokemon-types{
+    padding-top: 5px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     gap: 15px;

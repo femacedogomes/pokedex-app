@@ -11,3 +11,14 @@
     padding-bottom: 20px;
     margin-right: 50px;
 }
+.Container{
+    background-image: url('../assets//images/BackGround.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    align-items: center;
+    text-align: center;
+}
