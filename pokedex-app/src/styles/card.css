@@ -1,11 +1,19 @@
-
+.Card-border{
+    background-color: lightgrey;
+    height: 250px;
+    width: 320px;
+    border-radius: 25px;
+    margin: auto;
+    padding-top: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.192);
+}
 .Card{
-    background-color: lightgray;
+    background-color: goldenrod;
     margin: auto;
     height: 240px;
     width: 300px;
     text-align: center;
-    box-shadow: 5px  5px 5px 5px rgba(0, 0, 0, 0.192);
+    
     border-radius: 25px;
 }
 .Card div{
@@ -15,8 +23,15 @@
 }
 .card-header{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 10px;
+}
+.pokemon-name{
+    font-size: 20px;
+}
+.pokemon-id{
+    font-size: 14px;
 }
 .pokemon-image{
     margin-top: 10px;

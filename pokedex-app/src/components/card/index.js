@@ -11,7 +11,8 @@ const PokemonCard = (props) => {
         return Type
     }    
     return (
-        <div className='Card'>
+        <div className='Card-border'>
+            <div className='Card'>
             <img src={pokemon.sprites.other.dream_world.front_default} alt='Pokemon Image' className='pokemon-image'></img>
             <div className='card-header'>
                 <div className='pokemon-id'>#{pokemon.id}</div>
@@ -28,6 +29,7 @@ const PokemonCard = (props) => {
                 })}
             </div>
         </div>
+        </div>   
     )
 }
 
