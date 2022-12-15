@@ -34,6 +34,7 @@
     font-size: 14px;
 }
 .pokemon-image{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.404);
     margin-top: 10px;
     border-radius: 15px;
     background-color: white;

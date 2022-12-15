@@ -7,7 +7,7 @@ function Header() {
         <h2>
             Pokedex
         </h2>
-        <p>by Felipe Macêdo</p>
+        <p className='my-name'>by Felipe Macêdo</p>
         </div>      
     )
 }

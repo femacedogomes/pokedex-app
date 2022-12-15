@@ -54,13 +54,14 @@ function Home() {
                 <Header/>
                 <SearchBar
                 onSearch={onSearchHandler}
-                />
-                <Pokedex 
                 pokemons={pokemons} 
                 loading={loading} 
                 page={page} 
                 setPage={setPage}
                 totalPages={totalPages}
+                />
+                <Pokedex 
+                pokemons={pokemons} 
                 />
         </div>
     )

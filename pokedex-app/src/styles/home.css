@@ -3,15 +3,8 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
-.Pagination{
-    display: flex;
-    gap: 10px;
-    justify-content: end;
-    padding-bottom: 20px;
-    margin-right: 50px;
-}
 .Container{
+    min-height: 100vh;
     background-image: url('../assets//images/BackGround.jpg');
     background-attachment: fixed;
     background-position: center;
@@ -21,4 +14,10 @@
 h1{
     align-items: center;
     text-align: center;
+}
+.pages-number{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
 }

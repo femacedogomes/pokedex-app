@@ -4,12 +4,17 @@
     align-items: center;
     gap: 20px;
     justify-content: center;
-    background-color: lightgrey
+    background-color: rgb(255, 230, 7)
     
 }
 
 h2{
-    color: blue;
+    color: rgb(17, 0, 255);
     font-size: 42px;
     font-weight: bold;
+    text-shadow: 3px 3px 5px rgb(255, 255, 255);
+}
+.my-name{
+    padding-left: 15px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.61);
 }
